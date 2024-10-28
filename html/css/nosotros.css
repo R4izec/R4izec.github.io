@@ -1,0 +1,158 @@
+/* Estilos generales para el cuerpo */
+body { 
+    margin: 0; /* Elimina márgenes del body */
+    padding: 0; /* Elimina padding del body */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #ffd1d1);
+    overflow-x: hidden; /* Previene el desplazamiento horizontal */
+}
+
+/* Contenedor de imágenes */
+/* Contenedor de imágenes */
+.image-container { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    position: relative; 
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* Marco de las imágenes */
+.image-frame { 
+    border: 5px solid #ff4b6e; 
+    border-radius: 15px; 
+    padding: 10px; 
+    margin: 0 10px; 
+    position: relative; 
+    overflow: hidden;
+}
+
+/* Estilo de las imágenes */
+.image { 
+    width: 400px; 
+    height: auto; 
+    display: block;
+}
+
+/* Estilo para los nombres */
+.name { 
+    text-align: center; 
+    font-weight: bold; 
+    color: white; 
+    font-size: 24px; 
+    margin-top: 10px;
+}
+
+/* Estilo para los nombres */
+.name { 
+    text-align: center; 
+    font-weight: bold; 
+    color: white; 
+    font-size: 24px; 
+    margin-top: 10px;
+}
+
+/* Contenedor de corazones */
+.hearts { 
+    position: fixed; 
+    width: 100%; 
+    height: 100%; 
+    top: 0; 
+    left: 0; 
+    pointer-events: none; 
+    z-index: 1000;
+}
+
+/* Estilos de los corazones */
+.heart { 
+    position: absolute; 
+    width: 20px; 
+    height: 20px; 
+    background: #ff4b6e; 
+    transform: rotate(0deg); 
+    animation: float-up 4s infinite linear; 
+    opacity: 0.7;
+}
+.heart:before, .heart:after { 
+    content: ''; 
+    position: absolute; 
+    width: 20px; 
+    height: 20px; 
+    background: #ff4b6e; 
+    border-radius: 50%;
+}
+.heart:before { 
+    left: 0; 
+    top: -10px; 
+}
+.heart:after { 
+    left: -10px; 
+    top: 0; 
+}
+
+/* Posicionamiento de los corazones */
+.heart:nth-child(1) { 
+    left: 10%; 
+    animation-delay: 0s;
+}
+.heart:nth-child(2) { 
+    left: 50%; 
+    animation-delay: 2s;
+}
+.heart:nth-child(3) { 
+    left: 90%; 
+    animation-delay: 4s;
+}
+
+/* Animación de los corazones */
+@keyframes float-up { 
+    0% { 
+        bottom: -20px; 
+        transform: rotate(0deg) scale(1); 
+        opacity: 0.7;
+    } 
+    100% { 
+        bottom: 100%; 
+        transform: rotate(0deg) scale(0.5); 
+        opacity: 0;
+    }
+}
+
+/* Estilos para el contenedor de audio */
+.audio-container {
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 20px;
+}
+
+/* Estilos para el reproductor de audio */
+audio {
+    border: 3px solid #ff4b6e; /* Borde del reproductor */
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: white; /* Fondo del reproductor */
+    padding: 10px; /* Espaciado interno */
+    width: 300px; /* Ancho del reproductor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1000px) { 
+    .image-frame { 
+        width: 100%; /* Las imágenes ocuparán el 100% en pantallas pequeñas */ 
+        margin: 20px 0; /* Espacio entre las imágenes verticalmente */
+    } 
+    .image { 
+        width: 100%; /* Las imágenes ocuparán el 100% en pantallas pequeñas */
+    }
+}
+
+/* Solo se agregan media queries al final */
+@media (max-width: 768px) {
+    /* Aquí irán los ajustes para tablets */
+}
+
+@media (max-width: 480px) {
+    /* Aquí irán los ajustes para móviles */
+}

@@ -1,0 +1,85 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ff4b6e; /* Fondo del corazón */
+    min-height: 100vh; /* Altura mínima para el cuerpo */
+
+}
+
+/* Contenedor del corazón */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    margin-top: 500px;
+}
+
+/* Estilos del corazón */
+.heart {
+    position: relative;
+    width: 200px; 
+    height: 200px; 
+    transform: rotate(-45deg);
+    animation: heartbeat 1.2s infinite;
+    margin-bottom: 50px;
+    background-color: #fff;
+    margin-top: 250px ;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.heart::before {
+    top: -100px; 
+    left: 0;
+}
+
+.heart::after {
+    left: 100px; 
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0% { transform: rotate(-45deg) scale(1); }
+    25% { transform: rotate(-45deg) scale(1.1); }
+    50% { transform: rotate(-45deg) scale(1); }
+    75% { transform: rotate(-45deg) scale(1.1); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+/* Estilos del mensaje */
+.message {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 600px;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5em;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.poem-space {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8em;
+    color: #fff;
+    line-height: 1.6;
+    padding: 20px;
+    border-radius: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}

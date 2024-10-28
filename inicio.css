@@ -1,0 +1,170 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6b6b, #ffd1d1);
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.login-container {
+    perspective: 1000px;
+    position: relative;
+}
+
+/* Tarjeta de login */
+.love-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    position: relative;
+    overflow: hidden;
+}
+
+.love-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Título */
+h2 {
+    color: #ff4b6e;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+/* Grupo de inputs */
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Estilos de los inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ffd1d1;
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+input:focus {
+    border-color: #ff4b6e;
+}
+
+/* Botón de submit */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4b6e;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background: #ff365c;
+    transform: scale(1.05);
+}
+
+/* Contenedor de corazones */
+.hearts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+/* Estilos de los corazones */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4b6e;
+    transform: rotate(45deg);
+    animation: float-up 4s infinite linear;
+    opacity: 0.7;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #ff4b6e;
+    border-radius: 50%;
+}
+
+.heart:before {
+    left: -10px;
+    top: 0;
+}
+
+.heart:after {
+    left: 0;
+    top: -10px;
+}
+
+/* Posicionamiento de los corazones */
+.heart:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.heart:nth-child(2) {
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+/* Animación de los corazones */
+@keyframes float-up {
+    0% {
+        bottom: -20px;
+        transform: rotate(45deg) scale(1);
+        opacity: 0.7;
+    }
+    100% {
+        bottom: 100%;
+        transform: rotate(45deg) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .love-card {
+        width: 280px;
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input, button {
+        padding: 10px;
+    }
+}
